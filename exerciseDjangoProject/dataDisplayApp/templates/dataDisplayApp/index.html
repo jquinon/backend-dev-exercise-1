@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    {% load static %}
+
+    <p>Total Data Count: {{count}}</p>
+
+    <p>Zero Capital Loss: {{zero_capital_loss}}</p>
+    <p>Non-Zero Capital Loss: {{non_zero_capital_loss}}</p>
+
+    <p>Missing Data Count:</p>
+    <ul>
+      {% for key, val in missing_data.items %}
+      <li>{{ key }}: {{ val }}</li>
+      {% endfor %}
+    </ul>
+
+    <p>Countries By Percent:</p>
+    <ul>
+      {% for key, val in countries_by_percent.items %}
+      <li>{{ key }}: {{ val }}%</li>
+      {% endfor %}
+    </ul>
+
+    <img src="{% static 'marital_status_vs_capital_gain.png' %}" alt="marital_status_vs_capital_gain">
+
+  </body>
+</html>
